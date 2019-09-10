@@ -17,7 +17,13 @@ MonoBehaviour:
     m_intValue: 10
     m_floatValue: 10.5
     m_enumValue: 3
-  m_boolValue: 1
+    m_list:
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+    - {x: 0, y: 0, z: 0, w: 0}
+  m_boolValue: 0
   m_intValue: 10
   m_floatValue: 10.5
-  m_enumValue: 3
+  m_enumValue: 18

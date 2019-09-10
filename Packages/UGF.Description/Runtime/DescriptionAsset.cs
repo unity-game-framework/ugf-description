@@ -2,15 +2,13 @@ using UnityEngine;
 
 namespace UGF.Description.Runtime
 {
-    public abstract class DescriptionAsset<TDescription> : DescriptionAssetBase where TDescription : IDescription
+    public abstract class DescriptionAsset : ScriptableObject
     {
-        [SerializeField] private TDescription m_description;
-
-        public TDescription Description { get { return m_description; } set { m_description = value; } }
-
-        public override IDescription GetDescription()
+        public T GetDescription<T>() where T : IDescription
         {
-            return m_description;
+            return (T)GetDescription();
         }
+
+        public abstract IDescription GetDescription();
     }
 }
