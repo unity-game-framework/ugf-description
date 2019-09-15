@@ -3,8 +3,8 @@ using UnityEditor;
 
 namespace UGF.Description.Editor
 {
-    [CustomEditor(typeof(DescriptionAssetBase), true)]
-    internal class DescriptionAssetEditor : UnityEditor.Editor
+    [CustomEditor(typeof(DescriptionAsset), true)]
+    public class DescriptionAssetEditor : UnityEditor.Editor
     {
         private readonly string[] m_propertyExclude = { "m_Script", "m_description" };
         private SerializedProperty m_propertyScript;
@@ -20,21 +20,33 @@ namespace UGF.Description.Editor
 
             serializedObject.UpdateIfRequiredOrScript();
 
-            using (new EditorGUI.DisabledScope(true))
-            {
-                EditorGUILayout.PropertyField(m_propertyScript, true, null);
-            }
-
-            foreach (SerializedProperty serializedProperty in serializedObject.FindProperty("m_description"))
-            {
-                EditorGUILayout.PropertyField(serializedProperty, true, null);
-            }
-
-            DrawPropertiesExcluding(serializedObject, m_propertyExclude);
+            DrawScript();
+            DrawDescription();
+            DrawInspector();
 
             serializedObject.ApplyModifiedProperties();
 
             EditorGUI.EndChangeCheck();
+        }
+
+        protected virtual void DrawScript()
+        {
+            using (new EditorGUI.DisabledScope(true))
+            {
+                EditorGUILayout.PropertyField(m_propertyScript, true, null);
+            }
+        }
+
+        protected virtual void DrawDescription()
+        {
+            SerializedProperty propertyDescription = serializedObject.FindProperty("m_description");
+
+            DescriptionEditorGUIUtility.DrawChildren(propertyDescription);
+        }
+
+        protected virtual void DrawInspector()
+        {
+            DrawPropertiesExcluding(serializedObject, m_propertyExclude);
         }
     }
 }
