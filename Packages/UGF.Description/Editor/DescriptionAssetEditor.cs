@@ -9,7 +9,7 @@ namespace UGF.Description.Editor
         private readonly string[] m_propertyExclude = { "m_Script", "m_description" };
         private SerializedProperty m_propertyScript;
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             m_propertyScript = serializedObject.FindProperty("m_Script");
         }
