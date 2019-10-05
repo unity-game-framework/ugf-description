@@ -26,6 +26,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 - Nothing.
 
+## 1.0.1-preview - 2019-10-05
+- [Commits](https://github.com/unity-game-framework/ugf-description/compare/1.0.0-preview.1...1.0.1-preview)
+- [Milestone](https://github.com/unity-game-framework/ugf-description/milestone/3?closed=1)
+
+### Fixed
+- `DescriptionAssetEditor`: allow `OnEnabled` to override.
+
 ## 1.0.0-preview.1 - 2019-09-15
 - [Commits](https://github.com/unity-game-framework/ugf-description/compare/1.0.0-preview...1.0.0-preview.1)
 - [Milestone](https://github.com/unity-game-framework/ugf-description/milestone/2?closed=1)
