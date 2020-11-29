@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.ugf.builder": {
+      "version": "file:../../ugf-builder/Packages/UGF.Builder",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.ugf.description": {
       "version": "file:UGF.Description",
       "depth": 0,
