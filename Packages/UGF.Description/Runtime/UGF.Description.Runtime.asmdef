@@ -1,7 +1,9 @@
 {
     "name": "UGF.Description.Runtime",
     "rootNamespace": "UGF.Description.Runtime",
-    "references": [],
+    "references": [
+        "GUID:6c7389a7d4bbed54e96eb1e71a69798e"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
