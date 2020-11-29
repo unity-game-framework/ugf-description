@@ -1,5 +1,4 @@
 ﻿using UGF.Builder.Runtime;
-using UGF.Builder.Runtime.Assets;
 
 namespace UGF.Description.Runtime
 {
