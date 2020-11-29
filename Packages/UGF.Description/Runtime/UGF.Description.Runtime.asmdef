@@ -1,3 +1,14 @@
-﻿{
-	"name": "UGF.Description.Runtime"
+{
+    "name": "UGF.Description.Runtime",
+    "rootNamespace": "UGF.Description.Runtime",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
