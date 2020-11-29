@@ -2,7 +2,7 @@
 
 namespace UGF.Description.Runtime
 {
-    public abstract class DescriptionBuilder<TDescription> : Builder<TDescription>, IDescriptionBuilder where TDescription : class, IDescription
+    public abstract class DescriptionBuilderBase<TDescription> : Builder<TDescription>, IDescriptionBuilder where TDescription : class, IDescription
     {
         T IBuilder<IDescription>.Build<T>()
         {
