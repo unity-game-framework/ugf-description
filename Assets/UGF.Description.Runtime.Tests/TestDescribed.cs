@@ -19,7 +19,7 @@ namespace UGF.Description.Runtime.Tests
         TestDescribed Build(int value, bool boolean, TestDescription description);
     }
 
-    public class TestDescribedBuilder : DescribedBuilderBase<(int value, bool boolean, TestDescription description), TestDescribed, TestDescription>, ITestDescribedBuilder
+    public class TestDescribedBuilder : DescribedBuilderBase<(int value, bool boolean, TestDescription description), TestDescribed>, ITestDescribedBuilder
     {
         public TestDescribed Build(int value, bool boolean, TestDescription description)
         {
