@@ -3,21 +3,21 @@ using UGF.Builder.Runtime;
 
 namespace UGF.Description.Runtime
 {
-    public abstract class DescribedWithDescriptionBuilderAsset<TDescribed, TDescription> : DescribedBuilderAsset<TDescribed>, IDescriptionBuilder
+    public abstract class DescribedWithDescriptionBuilderAsset<TArguments, TDescribed, TDescription> : DescribedBuilderAsset<TArguments, TDescribed>, IDescriptionBuilder
         where TDescribed : class, IDescribed
         where TDescription : class, IDescription
     {
-        protected override TDescribed OnBuild()
+        protected override TDescribed OnBuild(TArguments arguments)
         {
             TDescription description = OnBuildDescription();
 
             if (description == null) throw new ArgumentNullException(nameof(description), "Description can not be null.");
 
-            return OnBuild(description);
+            return OnBuild(arguments, description);
         }
 
         protected abstract TDescription OnBuildDescription();
-        protected abstract TDescribed OnBuild(TDescription description);
+        protected abstract TDescribed OnBuild(TArguments arguments, TDescription description);
 
         T IBuilder<IDescription>.Build<T>()
         {

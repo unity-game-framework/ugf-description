@@ -2,16 +2,11 @@
 
 namespace UGF.Description.Runtime
 {
-    public abstract class DescribedBuilderAsset<TArguments, TDescribed> : BuilderAsset<TArguments, TDescribed>, IDescribedBuilder<TArguments> where TDescribed : class, IDescribed
+    public abstract class DescribedBuilderAsset<TDescribed> : BuilderAsset<TDescribed>, IDescribedBuilder where TDescribed : class, IDescribed
     {
-        T IBuilder<TArguments, IDescribed>.Build<T>(TArguments arguments)
+        IDescribed IBuilder<IDescribed>.Build()
         {
-            return (T)(object)OnBuild(arguments);
-        }
-
-        IDescribed IBuilder<TArguments, IDescribed>.Build(TArguments arguments)
-        {
-            return OnBuild(arguments);
+            return OnBuild();
         }
     }
 }
