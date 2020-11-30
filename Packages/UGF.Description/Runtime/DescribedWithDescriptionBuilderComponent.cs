@@ -4,7 +4,7 @@ using UGF.Builder.Runtime;
 namespace UGF.Description.Runtime
 {
     public abstract class DescribedWithDescriptionBuilderComponent<TArguments, TDescribed, TDescription> : DescribedBuilderComponent<TArguments, TDescribed, TDescription>, IDescriptionBuilder
-        where TDescribed : IDescribed<TDescription>
+        where TDescribed : class, IDescribed<TDescription>
         where TDescription : class, IDescription
     {
         protected override TDescribed OnBuild(TArguments arguments)

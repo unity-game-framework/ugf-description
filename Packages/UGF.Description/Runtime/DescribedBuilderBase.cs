@@ -3,7 +3,7 @@
 namespace UGF.Description.Runtime
 {
     public abstract class DescribedBuilderBase<TArguments, TDescribed, TDescription> : Builder<TArguments, TDescribed>, IDescribedBuilder<TArguments>
-        where TDescribed : IDescribed<TDescription>
+        where TDescribed : class, IDescribed<TDescription>
         where TDescription : class, IDescription
     {
         T IBuilder<TArguments, IDescribed>.Build<T>(TArguments arguments)
