@@ -6,11 +6,19 @@ namespace UGF.Description.Runtime
     {
         public TDescription Description { get; }
 
-        IDescription IDescribed.Description { get { return Description; } }
-
         protected DescribedBase(TDescription description)
         {
             Description = description ?? throw new ArgumentNullException(nameof(description));
+        }
+
+        public T GetDescription<T>() where T : class, IDescription
+        {
+            return (T)GetDescription();
+        }
+
+        public IDescription GetDescription()
+        {
+            return Description;
         }
     }
 }

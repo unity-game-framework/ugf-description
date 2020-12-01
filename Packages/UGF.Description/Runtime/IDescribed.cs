@@ -2,6 +2,7 @@
 {
     public interface IDescribed
     {
-        IDescription Description { get; }
+        T GetDescription<T>() where T : class, IDescription;
+        IDescription GetDescription();
     }
 }
