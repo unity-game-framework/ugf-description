@@ -2,6 +2,6 @@
 {
     public interface IDescribed<out TDescription> : IDescribed where TDescription : class, IDescription
     {
-        new TDescription Description { get; }
+        TDescription Description { get; }
     }
 }
